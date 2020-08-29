@@ -1,0 +1,163 @@
+From 179ec8c977f1b0c62b2f7881567b11533fecd7a6 Mon Sep 17 00:00:00 2001
+From: Kanika Negi <kanikanegi.0903@gmail.com>
+Date: Mon, 4 May 2020 17:30:15 +0000
+Subject: [PATCH] Create Patch File
+
+---
+ __pycache__/client3.cpython-38.pyc | Bin 0 -> 1161 bytes
+ client3.py                         |  52 ++++++++++++++---------------
+ client_test.py                     |  18 +++++++++-
+ 3 files changed, 42 insertions(+), 28 deletions(-)
+ create mode 100644 __pycache__/client3.cpython-38.pyc
+
+diff --git a/__pycache__/client3.cpython-38.pyc b/__pycache__/client3.cpython-38.pyc
+new file mode 100644
+index 0000000000000000000000000000000000000000..defb4579f20ec09bb03a55d3e09e35375c7e23cf
+GIT binary patch
+literal 1161
+zcmYjRPjA~c6elT4mJ>Tm)6}WaL)AmE83^JGyA(#ZrcFBR6r}&KmDnaI=5wM%79EN%
+zn$$U^AH+HKw$HG`J_N5j^}bzt>LVQoq456w^hCb*<AdHbn+pWjv%SCm{J%!Xzb?4B
+z>KJUHRR5roMACu?>Maw@+du@~a=|4Np$tSMxePxNQInCZp^c#~<71}(h6RW&=nnbg
+zy;y``+5mdgoGw8){Ra4yUy@6DNvF%sid#7mD{u>QH^ptJ!R-tBI~S|sj%bNBSc4T<
+zeN5o4tivkYfflR{c#B+6N=^)-3lPJKTx=86jW)SpSMPq2^cCqeKVvUs_w2!;F{56$
+zTd00k9IDFn9&J9_?4FE4pFYXuj~~wS|0p4Sl<O6u$5FOXsx4F#<fKi`sc{}_6B*!n
+z^ql#aU&p~Dn6Nb>!+YeMPw0eU%m*B+iOzb-o>p?)ha@YCL=6&i2uTSbK_>6AVhmMc
+zRB`|%=*(bJA~TbXR9>3IhLutMV_P$7l<w!!h9jN#VHRiA@n?o5cBl;ph007PwBgBE
+z8PE>4b^IWm<<~KH=4#j7C!!b8eCc%$)eyRRT;kc?ZB_O`mmq)5-kolr7I`TVJsJ(u
+zA(mf2`hB-w<WQO)Hb$qmaR6oq3*B>tws5z~Pg)SuWqcY`HxcW*Lgvf)PCU22q2stc
+z4)om#y|QFN?~zw?eBI+rugf{c^wt%&bpv~S_5Evi`ws80UF|N_H`!sL=1EAixwG$I
+z%v1yOY>d6U%uKHCV^l4pBG^OBmMKT;L@)WgG#zGnnWksozHmIt<YAR$CixDT?mev5
+z6QtQ&e;|6Dv)J#8c{X_ZY}*Dq&wuW;#nM<8MZUkG0jIGtBAUgPn|ug@A62Rpk<Ln~
+zh9Z3N=K0IFmhO5+uL~)&A*87dG3x*<MGr?nR-!iFvxa-B5tKF>C_T)K<r*?+BR?UP
+zh<uHej<GR6FWUVJw7Wz<BYxCMbAu{3GJ3|><Jm;~<e(}+6;uBNJm4&@$IUos&?Ml9
+JB9FAiz5=hw9rXYJ
+
+literal 0
+HcmV?d00001
+
+diff --git a/client3.py b/client3.py
+index f1771c3..c8f2adf 100644
+--- a/client3.py
++++ b/client3.py
+@@ -1,23 +1,13 @@
+-################################################################################
+-#
+-#  Permission is hereby granted, free of charge, to any person obtaining a
+-#  copy of this software and associated documentation files (the "Software"),
+-#  to deal in the Software without restriction, including without limitation
+-#  the rights to use, copy, modify, merge, publish, distribute, sublicense,
+-#  and/or sell copies of the Software, and to permit persons to whom the
+-#  Software is furnished to do so, subject to the following conditions:
+-#
+-#  The above copyright notice and this permission notice shall be included in
+-#  all copies or substantial portions of the Software.
+-#
+-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+-#  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+-#  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+-#  DEALINGS IN THE SOFTWARE.
++#This is where you would manually type the existing code in the client3.py, which is inside the jpm_module_1 folder (disregard copying the useless comments) so that you can avoid the dreaded tab editing issues in REPL particularly for the Python environment only
+ 
++#After manually copying the useful code in client3.py, you can make your changes here
++
++#Before you test your modified code is working, make sure you have done the initial steps needed to be done before making changes in the instruction slides
++
++#Then, to test, first, delete the client3.py file inside jpm_module_1. Then rename this file to just client3.py. Finally move this file inside the jpm_module_1 folder  
++
++# Delete these comments when you're done...
++# Comments are anything that's preceded with '#'
+ import urllib.request
+ import time
+ import json
+@@ -35,25 +25,33 @@ def getDataPoint(quote):
+ 	stock = quote['stock']
+ 	bid_price = float(quote['top_bid']['price'])
+ 	ask_price = float(quote['top_ask']['price'])
+-	price = bid_price
++	price = (ask_price+ bid_price)/2
+ 	return stock, bid_price, ask_price, price
+ 
+ def getRatio(price_a, price_b):
+-	""" Get ratio of price_a and price_b """
+-	""" ------------- Update this function ------------- """
+-	""" Also create some unit tests for this function in client_test.py """
+-	return 1
++  if(price_a!=0 and price_b!=0): 
++    return price_a/price_b
++  else:
++    if(price_a !=0 and price_b==0):
++      return
++    if(price_a==0 and price_b==0):
++      return
++    if(price_a==0 and price_b!=0):
++      return 0
++  
+ 
+ # Main
+ if __name__ == "__main__":
+ 
+ 	# Query the price once every N seconds.
+-	for _ in iter(range(N)):
++	for _ in range(N):
+ 		quotes = json.loads(urllib.request.urlopen(QUERY.format(random.random())).read())
+ 
+ 		""" ----------- Update to get the ratio --------------- """
++		prices = {}
+ 		for quote in quotes:
+ 			stock, bid_price, ask_price, price = getDataPoint(quote)
+-			print ("Quoted %s at (bid:%s, ask:%s, price:%s)" % (stock, bid_price, ask_price, price))
++			prices[stock] = price
++			print("Quoted %s at (bid:%s, ask:%s, price:%s)" % (stock, bid_price, ask_price, price))
+ 
+-		print ("Ratio %s" % getRatio(price, price))
++		print("Ratio %s" % getRatio(prices['ABC'], prices['DEF']))
+diff --git a/client_test.py b/client_test.py
+index af2bf26..cc90942 100644
+--- a/client_test.py
++++ b/client_test.py
+@@ -1,5 +1,5 @@
+ import unittest
+-from client3 import getDataPoint
++from client3 import getDataPoint,getRatio
+ 
+ class ClientTest(unittest.TestCase):
+   def test_getDataPoint_calculatePrice(self):
+@@ -8,6 +8,10 @@ class ClientTest(unittest.TestCase):
+       {'top_ask': {'price': 121.68, 'size': 4}, 'timestamp': '2019-02-11 22:06:30.572453', 'top_bid': {'price': 117.87, 'size': 81}, 'id': '0.109974697771', 'stock': 'DEF'}
+     ]
+     """ ------------ Add the assertion below ------------ """
++    for quote in quotes:
++      self.assertEqual(getDataPoint(quote), (quote['stock'], quote['top_bid']['price'], quote['top_ask']['price'],
++                                             (quote['top_bid']['price'] + quote['top_ask']['price'])/2))
++
+ 
+   def test_getDataPoint_calculatePriceBidGreaterThanAsk(self):
+     quotes = [
+@@ -15,9 +19,21 @@ class ClientTest(unittest.TestCase):
+       {'top_ask': {'price': 121.68, 'size': 4}, 'timestamp': '2019-02-11 22:06:30.572453', 'top_bid': {'price': 117.87, 'size': 81}, 'id': '0.109974697771', 'stock': 'DEF'}
+     ]
+     """ ------------ Add the assertion below ------------ """
++    for quote in quotes:
++      self.assertEqual(getDataPoint(quote), (quote['stock'], quote['top_bid']['price'], quote['top_ask']['price'],
++                                             (quote['top_bid']['price'] + quote['top_ask']['price']) / 2))
+ 
+ 
+   """ ------------ Add more unit tests ------------ """
++  def test_getRatio_a_price_zero(self):
++    self.assertEqual(getRatio(0, 1), 0)
++  def test_getRatio_bothZero(self):
++    self.assertEqual(getRatio(0,0),None)
++  def test_getRatio_b_price_zero(self):
++    self.assertEqual(getRatio(1,0),None)
++  def test_getRatio_forCorrelatedValues(self):
++    self.assertEqual(getRatio(125,125),1)
++ 
+ 
+ 
+ 
+-- 
+2.20.1
+
